@@ -38,6 +38,7 @@ void test_strcat()
 
     printf("f = %s\n", f);
     printf("s = %s\n", s);
+
     free(f);
     free(s);
 }
