@@ -6,5 +6,5 @@
 
 int main() 
 {
-	test_strchr();
+
 }

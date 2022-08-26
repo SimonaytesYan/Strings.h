@@ -18,7 +18,7 @@ void _strcpy(char *to, char* from) {
     to[n] = '\0';
 }
 
-void _strcap(char *to, char *from) {
+void _strcat(char *to, char *from) {
 
 	int n_to = _strlen(to);
     int i = 0;
@@ -47,7 +47,7 @@ char * _strchr(char * str, char c)
 int _strnlen(char *str, int maxLen) 
 {
     int n = 0;
-    while (str[n] != '\0' && maxLen <= n)
+    while (str[n] != '\0' && n < maxLen)
         n++;
     return n;
 }
@@ -65,6 +65,8 @@ void _strncpy(char *to, char* from, int maxLen)
 
 void _strncat(char *to, char *from, int maxLen) 
 {
+    if (maxLen < 0)
+        maxLen = 0;
     int len_to = _strlen(to);
     if (maxLen < len_to) 
     {

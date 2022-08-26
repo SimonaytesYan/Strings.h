@@ -5,7 +5,7 @@ int _strlen(char *str);
 
 void _strcpy(char *to, char* from);
 
-void _strcap(char *to, char *from);
+void _strcat(char *to, char *from);
 
 char *_strchr(char * str, char c);
 
@@ -16,6 +16,5 @@ void _strncpy(char *to, char* from, int maxLen);
 void _strncat(char *to, char* from, int maxLen);
 
 char *_strnchr(char * str, char c, int maxLen);
-
 
 #endif
