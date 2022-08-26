@@ -17,4 +17,10 @@ void test_strncat();
 
 void test_strnchr();
 
+void test_strdup();
+
+void test_puts();
+
+void test_getline();
+
 #endif

@@ -17,4 +17,10 @@ void _strncat(char *to, char* from, int maxLen);
 
 char *_strnchr(char * str, char c, int maxLen);
 
+char *_strdup(const char *str);
+
+void _puts(const char *str);
+
+int _getline(char *line, int max);
+
 #endif

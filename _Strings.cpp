@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 #include "_Strings.h"
 
 int _strlen(char *str) 
@@ -93,4 +96,41 @@ char *_strnchr(char *str, char c, int maxLen)
         i++;
     }    
     return nullptr;
+}
+
+char *_strdup(const char *str)
+{
+    int str_len = _strlen((char*)str);    
+    char *duplicate = (char *)calloc(str_len + 1, sizeof(char));
+
+    for(int i = 0; i < str_len; i++)
+        duplicate[i] = str[i];
+
+    duplicate[str_len] = '\0';
+    return duplicate;
+}
+
+void _puts(const char *str)
+{
+    int i = 0;
+    while(str[i] != '\0')
+    {
+        putc(str[i], stdout);
+        i++;
+    }
+    putc('\n', stdout);
+}
+
+int _getline(char *line, int max)
+{
+    int n = 0;
+    char c = 0;
+    while ((c = getc(stdin)) != '\n' && c != EOF  && n < max)
+    {
+        line[n] = c;
+        n++;
+    }
+    line[n] = '\0';
+
+    return n;
 }

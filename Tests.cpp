@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <cstring>
 #include "Tests.h"
 #include "_Strings.h"
 
@@ -142,7 +140,52 @@ void test_strnchr()
         for (int i = 25; i >= 0; i--)
         {
             printf("_strnchr(\"%s\", %c, %d) = \"%s\"\n", f, c, i, _strnchr(f, c, i));
-            printf(" strnchr(\"%s\", %c, %d) = \"%s\"\n", f, c, i, memchr(f, c, i));
+            //printf(" strnchr(\"%s\", %c, %d) = \"%s\"\n", f, c, i, memchr(f, c, i));
         }
     }
+}
+
+void test_strdup()
+{
+    char f[20] = "123456";
+
+    char* f2 = _strdup(f);
+
+    printf("f  = \"%s\"\n", f);
+    printf("2f = \"%s\"\n", f2); 
+    
+    free(f2);
+
+    _strcpy(f,(char *)"a");
+    f2 = _strdup(f);
+                           
+    printf("f  = \"%s\"\n", f);
+    printf("2f = \"%s\"\n", f2);
+                                
+    free(f2);
+
+    _strcpy(f,(char *)"");
+    f2 = _strdup(f);
+                           
+    printf("f  = \"%s\"\n", f);
+    printf("2f = \"%s\"\n", f2);
+
+    free(f2);
+}
+
+void test_puts()
+{
+    _puts("Hello world");
+    _puts("END IT!!");
+    _puts("1");
+    _puts("");
+}
+
+
+void test_getline()
+{
+    char str[100];
+
+    printf("size = %d\n", _getline(str, 100));
+    printf("%s\n", str);
 }
